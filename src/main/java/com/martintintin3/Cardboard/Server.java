@@ -1,5 +1,7 @@
 package com.martintintin3.Cardboard;
 
+import com.martintintin3.Cardboard.commands.GamemodeCommand;
+import com.martintintin3.Cardboard.commands.StopCommand;
 import com.martintintin3.Cardboard.events.*;
 
 import com.martintintin3.Cardboard.generator.WorldGenerator;
@@ -47,7 +49,8 @@ public class Server {
     }
 
     public void registerCommands() {
-
+        this.commandManager.register(new GamemodeCommand());
+        this.commandManager.register(new StopCommand());
     }
 
     public void registerEventHandlers() {
