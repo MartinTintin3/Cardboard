@@ -1,6 +1,7 @@
 package com.martintintin3.Cardboard;
 
 import com.martintintin3.Cardboard.commands.GamemodeCommand;
+import com.martintintin3.Cardboard.commands.SteveCommand;
 import com.martintintin3.Cardboard.commands.StopCommand;
 import com.martintintin3.Cardboard.events.*;
 
@@ -51,6 +52,7 @@ public class Server {
     public void registerCommands() {
         this.commandManager.register(new GamemodeCommand());
         this.commandManager.register(new StopCommand());
+        this.commandManager.register(new SteveCommand(this));
     }
 
     public void registerEventHandlers() {
