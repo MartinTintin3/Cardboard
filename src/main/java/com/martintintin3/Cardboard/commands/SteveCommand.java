@@ -43,7 +43,7 @@ public class SteveCommand extends Command {
                 steve.setCustomName(Component.text("Steve"));
                 steve.teleport(playerSender.getPosition());
 
-                sender.sendMessage(Component.text("Summoned a steve with id: " + steveId.toString()));
+                sender.sendMessage(Component.text("Summoned a steve with id: " + steveId.toString() + ", current steve count: " + steveList.size()));
             });
         });
     }
