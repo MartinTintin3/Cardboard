@@ -16,6 +16,7 @@ import net.minestom.server.world.DimensionType;
 
 public class Server {
     public Position worldSpawnPosition = new Position(0, 40, 0);
+    public Boolean enabled = false;
 
     public final MinecraftServer minecraftServer = MinecraftServer.init();
     public final InstanceManager instanceManager = MinecraftServer.getInstanceManager();
@@ -35,9 +36,14 @@ public class Server {
         // Register everything
         this.registerCommands();
         this.registerEventHandlers();
+    }
 
-        // Start the server
-        this.minecraftServer.start("0.0.0.0", 25565);
+    public void start() {
+        if(!enabled) {
+            this.minecraftServer.start("0.0.0.0", 25565);
+
+            enabled = true;
+        }
     }
 
     public void registerCommands() {
